@@ -19,7 +19,7 @@ class PriceForm extends Component {
 
   handleSubmit(event) {
     const {userInput} = this.props;
-    let gookbabCount = parseInt(this.userInput.price, 10);
+    let gookbabCount = parseInt(userInput.price, 10);
 
     const converted = gookbabCount / 5000;
     alert("고것은 " + converted + " 국밥이네요.");
