@@ -9,15 +9,19 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-
+  font-weight: normal;
   margin-top: 20em;
   background-image: url("http://www.powerkoream.co.kr/news/photo/201412/1102039_1308_2456.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
-h2 {
+h2,
+h3 {
+  font-size: 30px;
   font-weight: normal;
+  color: rgb(187, 187, 255);
+  -webkit-text-stroke: 1px black;
 }
 
 .vignette {
@@ -50,7 +54,7 @@ label {
 
 input[type="text"] {
   width: 20%;
-  font-size: 50px;
+  font-size: 40px;
   color: white;
   border: 1px solid #ccc;
   box-sizing: border-box;
