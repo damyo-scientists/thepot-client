@@ -37,6 +37,12 @@ h2 {
   border-radius: 8px;
 }
 
+.priceInput {
+  padding: 20px 10px;
+  line-height: 28px;
+  font-size: 30px;
+}
+
 img {
   max-width: 100%;
   max-height: 100%;
@@ -48,11 +54,17 @@ label {
   background: rgb(58, 57, 57);
 }
 
-input[type="text"] {
+input[type="number"] {
   width: 20%;
   font-size: 50px;
   color: white;
   border: 1px solid #ccc;
   box-sizing: border-box;
   background: rgb(58, 57, 57);
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

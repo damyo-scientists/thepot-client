@@ -12,8 +12,10 @@ class Description extends Component {
 
   render() {
     const { userInput } = this.props;
+
     let gb = new Conversion(userInput.price);
-    gb.toConsoleLog();
+    gb.setPrice(userInput.price);
+
     return (
       <div>
         <h2>당신의 돈 국밥으로 환산해보셨습니까?</h2>

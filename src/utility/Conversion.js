@@ -1,30 +1,40 @@
-import Axios from "axios";
+import DBServer from "../utility/DBServer";
 
+let instance;
 export default class Conversion {
-  constructor(price) {
-    this.price = price;
-    this.chickenPrice = 16000;
+  constructor(price, place = "강남") {
+    if (instance) return instance;
+
+    this.price = "";
+    this.place = place;
     this.gookbabPrice = 5000;
+    this.chickenPrice = 16000;
+    this.data = "";
+    this.getInitialData();
+
+    instance = this;
   }
 
-  async gookbabPlace(place) {
-    console.log(place);
+  async getInitialData(place = "강남") {
+    let data = new DBServer();
+    data = await data.recieveInfo();
 
-    const response = await Axios.get(
-      "https://thepot-dbserver.herokuapp.com/gookbabPlace"
-    );
-
-    let index = response.data.findIndex(function(item) {
+    let index = data.findIndex(function(item) {
       if (item.name === place) {
         return item;
       }
     });
 
-    console.log(response.data[index]);
+    this.gookbabPrice = data[index].lowprice;
+    this.chickenPrice = data[index].highprice;
   }
 
-  toConsoleLog() {
-    this.gookbabPlace("이세카이");
+  //////////////////////////
+  // Render visualization //
+  //////////////////////////
+
+  setPrice(price) {
+    this.price = price;
   }
 
   toGookbab() {
