@@ -32,12 +32,13 @@ class PriceForm extends Component {
           <label>
             가격:
             <input
-              type="text"
+              type="number"
               value={userInput.price}
               onChange={this.handleChange}
+              className="priceInput"
             />
           </label>
-          <input type="submit" className="btnClass" value="리셋" />
+          <input type="submit" className="btnClass" value="확인" />
         </form>
       </div>
     );

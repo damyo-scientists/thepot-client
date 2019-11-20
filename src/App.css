@@ -9,19 +9,15 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  font-weight: normal;
+
   margin-top: 20em;
   background-image: url("http://www.powerkoream.co.kr/news/photo/201412/1102039_1308_2456.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
-h2,
-h3 {
-  font-size: 30px;
+h2 {
   font-weight: normal;
-  color: rgb(187, 187, 255);
-  -webkit-text-stroke: 1px black;
 }
 
 .vignette {
@@ -41,6 +37,12 @@ h3 {
   border-radius: 8px;
 }
 
+.priceInput {
+  padding: 20px 10px;
+  line-height: 28px;
+  font-size: 30px;
+}
+
 img {
   max-width: 100%;
   max-height: 100%;
@@ -52,11 +54,17 @@ label {
   background: rgb(58, 57, 57);
 }
 
-input[type="text"] {
+input[type="number"] {
   width: 20%;
-  font-size: 40px;
+  font-size: 50px;
   color: white;
   border: 1px solid #ccc;
   box-sizing: border-box;
   background: rgb(58, 57, 57);
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
